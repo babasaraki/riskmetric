@@ -16,15 +16,14 @@ pkg_ref_cache.bug_reports_url.pkg_source <- function(x, ...) {
   old_lib_paths <- .libPaths()
   on.exit(.libPaths(old_lib_paths))
   .libPaths(dirname(x$path))
-
-  packageDescription(x$name)$BugReports
+  as.character(packageDescription(x$name)$BugReports)
 }
 
 
 
 #' @importFrom utils packageDescription
 pkg_ref_cache.bug_reports_url.pkg_install <- function(x, ...) {
-  packageDescription(x$name)$BugReports
+  as.character(packageDescription(x$name)$BugReports)
 }
 
 
